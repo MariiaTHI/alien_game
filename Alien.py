@@ -27,7 +27,7 @@ class Alien(ABC):
         Define how an alien is represented as a string
         :return: A string representation of the alien
         """
-        return f"{self.armor}"
+        pass
 
     @abstractmethod
     def got_hit(self):

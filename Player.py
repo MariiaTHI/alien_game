@@ -2,18 +2,16 @@
 #            TEAM 2
 # -----------------------------
 from abc import ABC, abstractmethod
-
 class Player(ABC):
     """
     Abstract Player class
     """
-
     def __init__(self, cols):
         """
         Constructor
         :param cols: the available columns of the play field
         """
-        pass
+        self.cols = cols
 
     @abstractmethod
     def shoot(self):
@@ -22,3 +20,6 @@ class Player(ABC):
         :return: the column to shoot at
         """
         pass
+
+if __name__ == '__main__':
+    print('abstract class')

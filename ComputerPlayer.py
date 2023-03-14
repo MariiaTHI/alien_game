@@ -2,13 +2,12 @@
 #            TEAM 2
 # -----------------------------
 import random
-import Player
+from Player import Player
 
 class ComputerPlayer(Player):
     """
     A player that is steered automatically by the computer
     """
-
     def __init__(self, cols):
         """
         Constructor which is initializing a memory
@@ -24,7 +23,6 @@ class ComputerPlayer(Player):
         Shoots smartly at a specific column
         :return:
         """
-
         # smartly select a column where it was not already shot 2 times at before
         valid_cols = [i for i in range(len(self.memory)) if self.memory[i] < 2]
         col = random.choice(valid_cols)
@@ -32,5 +30,9 @@ class ComputerPlayer(Player):
         self.memory[col] += 1
         # return the value
         return col
+
+if __name__ == '__main__':
+    computer = ComputerPlayer(6)
+    print(computer.shoot())
 
 
